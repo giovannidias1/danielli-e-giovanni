@@ -1,0 +1,1442 @@
+<html lang="pt-br"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual dos Padrinhos | Danielli &amp; Giovanni</title>
+
+    <!-- Fontes Modernas: Bodoni Moda (Editorial) e Montserrat (Clean) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600;6..96,800&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+    <style>
+      /* --- 1. PALETA DE CORES (MODERNA & ORGÂNICA) --- */
+      :root {
+        --marsala: #7a2e39;
+        --mauve: #9e565b;
+        --verde-oliva: #535d4b;
+        /* Novo destaque para botões/footer */
+        --verde-salvia: #bcc5a8;
+        /* Fundo da sessão Local */
+        --verde-suave-bg: #eaece6;
+        /* Fundo alternativo muito claro */
+        --preto-suave: #222222;
+        --cinza-claro: #f5f5f5;
+        --branco: #ffffff;
+      }
+
+      /* --- 2. CONFIGURAÇÕES GERAIS --- */
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+        background-color: var(--branco);
+        color: var(--preto-suave);
+        line-height: 1.8;
+        font-weight: 300;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Bodoni Moda", serif;
+        color: var(--marsala);
+        margin-top: 0;
+        line-height: 1.2;
+      }
+
+      h1 {
+        font-size: 4rem;
+        letter-spacing: -1px;
+        font-weight: 800;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        letter-spacing: -0.5px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+      }
+
+      small {
+        font-size: 0.8rem;
+        color: #666;
+      }
+
+      /* --- 3. MENU MINIMALISTA --- */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        border-bottom: 1px solid rgba(83, 93, 75, 0.1);
+        /* Borda verde bem sutil */
+        z-index: 1000;
+        text-align: center;
+        padding: 20px 0;
+        backdrop-filter: blur(5px);
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--verde-oliva);
+        /* Menu agora em verde oliva */
+        margin: 0 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: var(--marsala);
+      }
+
+      /* --- 4. HEADER EDITORIAL (COM LOGO) --- */
+      header {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 100px 20px 40px;
+        background-color: var(--branco);
+        position: relative;
+      }
+
+      /* SVG Logo Estilizado */
+      .logo-container {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 30px;
+      }
+
+      .logo-svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--marsala);
+      }
+
+      header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 0.9rem;
+        color: var(--verde-oliva);
+        /* Subtítulo em Verde */
+        margin-bottom: 40px;
+        font-weight: 600;
+      }
+
+      .header-text {
+        max-width: 500px;
+        font-style: italic;
+        color: #555;
+        border-top: 1px solid var(--verde-salvia);
+        /* Linhas em verde sálvia */
+        border-bottom: 1px solid var(--verde-salvia);
+        padding: 20px 0;
+        margin-top: 20px;
+      }
+
+      /* --- 5. LAYOUT DE SESSÕES --- */
+      section {
+        padding: 100px 5%;
+        max-width: 1200px;
+        margin: 0 auto;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .grid-moderno {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .grid-moderno img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(10%) contrast(105%);
+        /* Imagens mais naturais */
+        border-radius: 2px;
+      }
+
+      /* --- 6. ELEMENTOS ESPECÍFICOS --- */
+      /* Data destaque */
+      .big-date {
+        font-family: "Bodoni Moda", serif;
+        font-size: 5rem;
+        line-height: 1;
+        color: var(--marsala);
+        margin: 20px 0;
+        display: block;
+      }
+
+      /* Botões em Verde Oliva */
+      .btn-moderno {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 40px;
+        background-color: transparent;
+        color: var(--verde-oliva);
+        border: 1px solid var(--verde-oliva);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      .btn-moderno:hover {
+        background-color: var(--verde-oliva);
+        color: white;
+      }
+      .texto-recuado p {
+        text-indent: 2em;
+      }
+      /* Paleta de Cores Minimalista */
+      .palette-container {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .color-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+      .color-dot {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      .color-dot::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        bottom: -5px;
+        left: -5px;
+        right: -5px;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+      }
+      .color-name {
+        font-size: 12px;
+        text-align: center;
+      }
+
+      /* Cards Padrinhos */
+      .cards-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-top: 40px;
+      }
+
+      .card-moderno {
+        text-align: left;
+        background-color: white;
+      }
+
+      .card-moderno img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
+
+      .card-moderno h3 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+
+      .card-moderno p {
+        margin: 0;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      /* Vídeos: cards clicáveis com thumbnail */
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .video-card {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .video-frame {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        background: #000;
+      }
+
+      .video-thumb {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        filter: brightness(0.9);
+      }
+
+      .video-card:hover .video-thumb {
+        transform: scale(1.03);
+        filter: brightness(1);
+      }
+
+      .play-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.35));
+        color: white;
+        font-size: 2.4rem;
+        font-weight: 700;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        pointer-events: none;
+      }
+
+      .video-meta {
+        text-align: center;
+        margin-top: 12px;
+        color: var(--verde-oliva);
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+    .video-meta small {
+      color: #666;
+      display: block;
+      font-size: 0.85rem;
+    }
+
+    /* Links extras apenas para impressão */
+    .video-link-print {
+      display: none;
+    }
+
+      /* Imprimir: manter título, subtítulo e grid de vestidos na mesma página */
+      #Vestidos,
+      #Vestidos h2,
+      #Vestidos p,
+      #Vestidos .vestidos-grid,
+      #Vestidos .vestidos-grid a {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      /* Estilo Específico para Seção Local (Fundo Verde) */
+      #local {
+        background-color: var(--verde-suave-bg);
+        max-width: 100%;
+        /* Ocupar tela toda */
+        width: 100%;
+        padding: 100px 5%;
+        color: #2e3b26;
+        /* Texto verde escuro para contraste */
+      }
+
+      #local h2,
+      #local h3 {
+        color: var(--marsala);
+      }
+
+      #local p {
+        color: #3a4a33;
+        font-weight: 400;
+      }
+
+      #local .grid-moderno {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Botões dentro do local precisam de contraste */
+      #local .btn-moderno {
+        border-color: var(--marsala);
+        color: var(--marsala);
+      }
+
+      #local .btn-moderno:hover {
+        background-color: var(--marsala);
+        color: white;
+      }
+
+      /* Galeria do local: imagens maiores e com respiro */
+      #local .local-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 520px;
+        margin-left: auto;
+      }
+
+      #local .local-gallery img {
+        width: 100%;
+        height: 300px;
+        border-radius: 20px;
+        object-fit: cover;
+        filter: none;
+      }
+
+      /* Footer em Verde Escuro */
+      footer {
+        text-align: center;
+        padding: 80px 20px;
+        background-color: var(--verde-oliva);
+        color: white;
+      }
+
+      footer small {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* --- 7. AJUSTES MOBILE --- */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        .grid-moderno {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        nav {
+          display: none;
+        }
+
+        /* Ocultar menu no mobile para limpeza */
+        header {
+          padding-top: 40px;
+        }
+
+        #local {
+          padding: 60px 20px;
+        }
+      }
+
+      /* --- 8. IMPRESSÃO (PDF) --- */
+      @media print {
+        /* Menu impresso como sumário clicável */
+        /* Esconde o menu fixo do topo na impressão */
+        nav {
+          display: none !important;
+        }
+        
+        /* Adiciona índice de navegação após o texto de introdução no header */
+        .header-text::after {
+          content: 'Capa • O Evento • Local • Madrinhas • Padrinhos • Demoiselle';
+          display: block;
+          margin-top: 12mm;
+          padding-top: 10mm;
+          border-top: 1px solid var(--verde-salvia);
+          color: var(--verde-oliva);
+          font-size: 8pt;
+          font-weight: 600;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          text-align: center;
+          font-style: normal;
+        }
+
+        nav a {
+          display: inline-block;
+          margin: 0;
+          color: #444 !important;
+          text-decoration: none;
+          font-weight: 600;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+        }
+
+        .no-print {
+          display: none !important;
+        }
+
+        body {
+          background-color: #ffffff;
+          font-size: 11pt;
+          color: #1f1f1f;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        h1 {
+          font-size: 32pt;
+          letter-spacing: -0.5px;
+        }
+
+        h2 {
+          font-size: 18pt;
+          margin-bottom: 14pt;
+        }
+
+        h3 {
+          font-size: 12pt;
+          letter-spacing: 1px;
+          margin-bottom: 8pt;
+        }
+
+        p {
+          font-size: 10pt;
+          margin-bottom: 12pt;
+        }
+
+        /* Margens confortáveis e largura controlada */
+        @page {
+          margin: 0;
+          size: auto;
+        }
+
+        section,
+        header,
+        footer {
+          max-width: 200mm;
+          margin: 0 auto;
+          page-break-inside: avoid;
+          border: none;
+        }
+
+        section {
+          padding: 24mm 16mm 18mm;
+        }
+
+        /* Capa ocupa a primeira página, mas sem desperdiçar espaço */
+        header {
+          padding: 30mm 16mm 20mm;
+          height: auto;
+          page-break-after: always;
+          justify-content: center;
+          border-bottom: none;
+        }
+
+        .logo-container {
+          width: 140px;
+          height: 140px;
+          margin-bottom: 12mm;
+        }
+
+        .subtitle {
+          letter-spacing: 5px;
+        }
+
+        .header-text {
+          max-width: 160mm;
+          margin: 12mm auto 0;
+          padding: 8mm 10mm;
+          border: none;
+          background-color: #fafafa;
+          color: #3a3a3a;
+        }
+
+        .big-date {
+          font-size: 36pt;
+          margin: 6mm 0 3mm;
+        }
+
+        /* Grids com espaçamento de revista */
+        .grid-moderno {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 12mm;
+          align-items: flex-start;
+        }
+
+        .grid-moderno > div {
+          break-inside: avoid;
+        }
+
+        .cards-wrapper {
+          grid-template-columns: repeat(auto-fit, minmax(55mm, 1fr));
+          gap: 10mm;
+        }
+
+        .card-moderno img {
+          height: 220px;
+          object-fit: cover;
+        }
+
+        .palette-container {
+          justify-content: flex-start;
+        }
+        /* Wrapper para cada vídeo + texto */
+        /* Estilo para garantir que os vídeos fiquem lado a lado na impressão */
+        .video-grid {
+          /* Usa flexbox para alinhamento horizontal */
+          display: flex;
+          /* Garante que os itens não quebrem linha, mas fiquem apertados */
+          flex-wrap: nowrap;
+          /* Alinha os vídeos ao centro do contêiner */
+          justify-content: center;
+          /* Importante: Evita que o bloco quebre no meio do conteúdo */
+          page-break-inside: avoid;
+        }
+
+        /* Reduz a largura e remove margens desnecessárias dos itens de vídeo */
+        .video-item {
+          /* Usa 30% da largura do contêiner para caber 3 lado a lado */
+          flex-basis: 30%;
+          min-width: 70mm; /* Garante um tamanho mínimo em milímetros */
+          max-width: 90mm; /* Garante que não fique muito largo */
+          margin: 0 5mm; /* Adiciona um espaço pequeno entre os vídeos */
+          /* Importante: Evita que o vídeo individual quebre de página */
+          page-break-inside: avoid;
+
+          /* Ajuste do layout interno */
+          flex-direction: column;
+          align-items: center;
+          gap: 5px;
+        }
+
+        /* Reduz o iframe na impressão para caber */
+        .video-item iframe {
+          /* Ocupa a largura máxima do seu contêiner pai (.video-item) */
+          width: 100% !important;
+          /* Defina uma altura fixa em unidades de impressão (mm) */
+          height: 50mm !important;
+          border-radius: 5px;
+          display: block;
+        }
+
+        /* Ajuste para o texto abaixo do vídeo */
+        .video-item p {
+          font-size: 8pt;
+          text-align: center;
+          margin: 0;
+        }
+
+        /* Mostrar botões (links) no print */
+        .btn-moderno {
+          display: inline-block !important;
+          color: #1f1f1f !important;
+          border-color: #1f1f1f !important;
+        }
+
+        /* Vestidos: manter tudo na mesma página e ajustar alturas */
+        #Vestidos {
+          padding: 12mm 16mm 12mm;
+          page-break-inside: avoid;
+          page-break-after: avoid;
+          break-inside: avoid;
+        }
+
+        /* Vestidos: manter tudo na mesma página e ajustar alturas */
+        #Vestidos {
+          padding: 12mm 16mm 12mm;
+          page-break-inside: avoid;
+          page-break-after: avoid;
+          break-inside: avoid;
+        }
+
+        #Vestidos h2 {
+          margin-bottom: 10mm;
+        }
+
+        #Vestidos p {
+          margin-bottom: 10mm;
+        }
+
+        #Vestidos .vestidos-grid {
+          page-break-inside: avoid;
+          break-inside: avoid;
+          gap: 8mm;
+        }
+
+        #Vestidos .vestidos-grid a {
+          page-break-inside: avoid;
+          break-inside: avoid;
+        }
+
+        #Vestidos .vestidos-grid img {
+          height: 55mm;
+          object-fit: cover;
+        }
+
+        /* Local: layout otimizado para o PDF */
+        #local {
+          padding: 20mm 16mm 18mm;
+          page-break-inside: avoid;
+        }
+
+        #local .grid-moderno {
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 12mm;
+          align-items: start;
+        }
+
+        #local .local-gallery {
+          gap: 10mm;
+        }
+
+        #local .local-gallery img {
+          height: 70mm;
+          object-fit: cover;
+        }
+
+        #local .btn-moderno {
+          display: inline-block !important;
+          margin-top: 8px;
+          padding: 10px 22px;
+          font-size: 9pt;
+          border: 1px solid #1f1f1f !important;
+          color: #1f1f1f !important;
+          background: transparent !important;
+        }
+
+        #local .btn-moderno + .btn-moderno {
+          margin-left: 6px !important;
+        }
+
+
+        /* Vídeos: layout para impressão sem iframe */
+        #videos .video-grid {
+          display: grid !important;
+          grid-template-columns: repeat(2, minmax(80mm, 1fr));
+          gap: 8mm;
+          page-break-inside: avoid;
+        }
+
+        #videos .video-item {
+          page-break-inside: avoid;
+          break-inside: avoid;
+          border: 1px solid #ddd;
+          border-radius: 6px;
+          padding: 6mm;
+        }
+
+        #videos iframe {
+          display: none !important;
+        }
+
+        .video-link-print {
+          display: block;
+          margin-top: 6px;
+          font-size: 9pt;
+          color: #1f1f1f;
+          word-break: break-all;
+        }
+
+        /* Fundo e contraste assegurados */
+        #local {
+          padding: 24mm 16mm 18mm;
+          max-width: 200mm;
+          margin: 0 auto;
+          background-color: var(--verde-salvia) !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        footer {
+          padding: 18mm 16mm;
+          max-width: 200mm;
+          margin: 0 auto;
+          background-color: var(--verde-oliva) !important;
+          color: white !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        /* Garantia de imagens e blocos coesos */
+        img {
+          max-width: 100%;
+          print-color-adjust: exact;
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <a href="#inicio">Capa</a>
+      <a href="#evento">O Evento</a>
+      <a href="#local">Local</a>
+      <a href="#madrinhas">Madrinhas</a>
+      <a href="#padrinhos">Padrinhos</a>
+      <a href="#demoiselle">Demoiselle</a>
+    </nav>
+
+    <!-- HEADER / CAPA -->
+    <header id="inicio">
+      <!-- LOGO SVG ESTILIZADO -->
+      <!-- LOGO -->
+      <div class="logo-container" style="width: 350px; height: 350px">
+        <img src="https://i.imgur.com/OfCOaZN.png" alt="Danielli &amp; Giovanni" style="width: 100%; height: 100%; object-fit: contain">
+      </div>
+
+      <div class="subtitle">Manual dos Padrinhos</div>
+      <h1>Danielli &amp; Giovanni</h1>
+
+      <div class="header-text">
+        "Para nós, o dia mais importante de nossas vidas só faria sentido se
+        tivéssemos ao nosso lado as pessoas mais importantes da nossa história."
+      </div>
+    </header>
+
+    <!-- O EVENTO -->
+    <section id="evento">
+      <div class="grid-moderno">
+        <div>
+          <!-- Imagem de Casal / Decoração -->
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&amp;w=800&amp;auto=format&amp;fit=crop" style="border-radius: 20px" alt="Casamento Moderno">
+        </div>
+        <div>
+          <h3 style="color: var(--verde-oliva)">Save the Date</h3>
+          <h2 style="margin-bottom: 0">01 de Agosto</h2>
+          <span class="big-date">2026</span>
+          <p><strong>Horário:</strong> 16h00 — Pôr do Sol</p>
+          <p>
+            Preparamos um final de tarde inesquecível. A cerimônia será ao ar
+            livre, seguida de uma recepção intimista e elegante.
+          </p>
+          <p style="color: var(--verde-oliva)">
+            <em>Dress Code: Passeio Completo / Social</em>
+          </p>
+        </div>
+      </div>
+      <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee">
+      <h3>Nossa Escolha de Padrinhos</h3>
+        <div class="texto-recuado">
+        <p>Quando chegou o momento de, finalmente, definirmos quem seriam os nossos padrinhos, surgiu a primeira dúvida: "o que é um padrinho de casamento e para que serve?". Uma busca rápida no <em>Google</em> e nos deparamos com um breve texto que afirmava que são as pessoas escolhidas pelos noivos para serem testemunhas do matrimônio e estarem presentes como apoio emocional e prático durante os preparativos e após o casamento e que a escolha deveria se basear na afinidade e na confiança, porque os padrinhos são amigos e familiares importantes na vida do casal.</p>
+        <p>Pensando nisso, não foi uma tarefa fácil; conversamos muito sobre quem deveriam ser e houve uma curta lista de requisitos: deveriam ser pessoas que foram e são importantes em nossa vida, pessoas que fizeram parte de quem somos, além de serem pessoas que admiramos e que poderão dar bons conselhos na hora da dificuldade. Escolhemos aqueles que gostaríamos de honrar, assim como cada um tem nos honrado.</p>
+        <p>É um privilégio imenso ter compartilhado tantos momentos com vocês - desde os bons até os mais desafiadores - e não poderíamos não convidá-los para participar do evento e decisão mais importantes de nossas vidas. O nosso <em>"sim"</em> não estaria completo sem a presença de vocês, porque também é sobre quem nos suportou e apoiou até o final da nossa vida de solteiros e nos acompanhou e entregou até o altar.</p>
+        <p>Somos gratos a Deus pela vida de cada um de vocês e pedimos a Ele que abençoe a cada um abundantemente, assim como vocês têm abençoado a nossa com tanto carinho, apoio e amor.</p>
+        <p>Deus os abençoe por aceitar fazer parte do dia mais feliz de nossas vidas e apenas o começo de nossa jornada.</p>
+        </div>
+    </section>
+
+    <!-- LOCAL (BACKGROUND VERDE) -->
+    <section id="local">
+      <div class="grid-moderno" style="direction: rtl">
+        <!-- Inverte a ordem visualmente (Texto esq, Foto dir) -->
+        <div class="local-gallery" style="direction: ltr">
+          <!-- Volta o texto ao normal -->
+          <!-- Imagem do Espaço Martília -->
+          <img src="https://cdn0.casamentos.com.br/vendor/1032/3_2/960/jpg/1000407410_13_441032-173015277243955.jpeg" alt="Espaço Martília - vista externa">
+          <img src="https://cdn0.casamentos.com.br/vendor/1032/3_2/960/jpg/1000407379_13_441032-173015279651931.jpeg" alt="Espaço Martília - vista interna">
+        </div>
+        <div style="direction: ltr; text-align: left">
+          <h3>O Cenário</h3>
+          <h2>Espaço Martília</h2>
+          <p>R. Ernesto Vidotti Filho, 115<br>São Carlos</p>
+          <p>
+            Um local que respira história e natureza. A cerimônia e a festa
+            acontecerão no mesmo espaço para o conforto de todos.
+          </p>
+
+          <a href="https://maps.app.goo.gl/1ZgbK3SkT5t6EZBS8" class="btn-moderno">Google Maps</a>
+          <a href="https://ul.waze.com/ul?venue_id=204604971.2045787568.36491236&amp;overview=yes&amp;utm_campaign=default&amp;utm_source=waze_website&amp;utm_medium=lm_share_location" class="btn-moderno" style="margin-left: 10px">Waze</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MADRINHAS -->
+    <section id="madrinhas">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 50px">
+        <h2>Madrinhas</h2>
+        <p>
+          A paleta foi escolhida para harmonizar com o pôr do sol e a natureza
+          local. Sintam-se livres para escolher o modelo que mais valoriza sua
+          beleza.
+        </p>
+      </div>
+
+      <div class="grid-moderno">
+        <div>
+          <h3 style="color: var(--verde-oliva)">
+            A Paleta: Sunset &amp; Nature
+          </h3>
+          <p>
+            Sugerimos tecidos fluidos, sem brilho excessivo. Apostem na
+            elegância e leveza.
+          </p>
+
+          <div class="palette-container">
+            <div class="color-item">
+              <div class="color-dot" style="background-color: #9e565b"></div>
+              <span class="color-name">Mauve</span>
+            </div>
+
+            <div class="color-item">
+              <div class="color-dot" style="background-color: #a55e64"></div>
+              <span class="color-name">Rosa Queimado</span>
+            </div>
+            <div class="color-item">
+              <div class="color-dot" style="background-color: #b56f76"></div>
+              <span class="color-name">Rosa Empoeirado</span>
+            </div>
+
+            <div class="color-item">
+              <div class="color-dot" style="background-color: #d48c90"></div>
+              <span class="color-name">Rosa Antigo</span>
+            </div>
+          </div>
+
+          <p><small>REFERÊNCIA: PANTONE 19-1522 TCX</small></p>
+        </div>
+
+        <!-- Grid de Inspiração Madrinhas -->
+        <div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px">
+            <!-- Madrinhas de Rosa/Marsala -->
+            <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&amp;w=400&amp;auto=format&amp;fit=crop" style="
+                border-radius: 20px;
+                height: 250px;
+                width: 100%;
+                object-fit: cover;
+              ">
+            <!-- Buquê / Detalhe -->
+            <img src="https://images.unsplash.com/photo-1520342868574-5fa3804e551c?q=80&amp;w=400&amp;auto=format&amp;fit=crop" style="
+                border-radius: 20px;
+                height: 250px;
+                width: 100%;
+                object-fit: cover;
+              ">
+          </div>
+        </div>
+      </div>
+   </section>
+    <section id="Vestidos">
+    <!-- Exemplos de Vestidos com Links -->
+    
+      <div style="text-align: center; max-width: 700px; margin: 10 auto 50px">
+        <h2>Inspirações de Vestidos</h2>
+
+        <p style="max-width: 600px; margin: 0 auto 40px">
+          Selecionamos algumas opções que seguem nossa paleta. Clique nas
+          imagens para ver mais detalhes:
+        </p>
+
+        <div class="vestidos-grid" style="
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+          ">
+          <a href="https://br.pinterest.com/pin/985231162574805/" target="_blank" style="text-decoration: none; color: inherit">
+            <div style="
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                border-radius: 20px;
+                transition: transform 0.3s;
+              ">
+              <img src="https://i.pinimg.com/736x/31/66/33/316633b41c33619c4e3ac4c8e9ce828f.jpg" style="
+                  border-radius: 20px;
+                  height: 250px;
+                  width: 100%;
+                  object-fit: cover;
+                  display: block;
+                " alt="Vestido Longo Rosa Queimado">
+              <div style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+                  padding: 20px;
+                  color: white;
+                ">
+                <h4 style="margin: 0; font-size: 1rem; color: white">
+                  Vestido Rosa Antigo Profundo
+                </h4>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://br.pinterest.com/pin/330170216449434368/" target="_blank" style="text-decoration: none; color: inherit">
+            <div style="
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                border-radius: 20px;
+                transition: transform 0.3s;
+              ">
+              <img src="https://i.pinimg.com/1200x/c1/0e/0e/c10e0eb94bd0b7feaa8d0d11cfaa637d.jpg" style="
+                  border-radius: 20px;
+                  height: 250px;
+                  width: 100%;
+                  object-fit: cover;
+                  display: block;
+                " alt="Vestido Rosa Queimado">
+              <div style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+                  padding: 20px;
+                  color: white;
+                ">
+                <h4 style="margin: 0; font-size: 1rem; color: white">
+                  Vestido Rosa Queimado
+                </h4>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://br.pinterest.com/pin/234116880624487193/" target="_blank" style="text-decoration: none; color: inherit">
+            <div style="
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                border-radius: 20px;
+                transition: transform 0.3s;
+              ">
+              <img src="https://i.pinimg.com/736x/ce/7a/67/ce7a675f27912437badc0ca0a3bf3f52.jpg" style="
+                  border-radius: 20px;
+                  height: 250px;
+                  width: 100%;
+                  object-fit: cover;
+                  display: block;
+                " alt="Vestido Rosa Antigo">
+              <div style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+                  padding: 20px;
+                  color: white;
+                ">
+                <h4 style="margin: 0; font-size: 1rem; color: white">
+                  Vestido Rosa Antigo
+                </h4>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://br.pinterest.com/pin/2111131069048415/" target="_blank" style="text-decoration: none; color: inherit">
+            <div style="
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                border-radius: 20px;
+                transition: transform 0.3s;
+              ">
+              <img src="https://i.pinimg.com/736x/a7/e8/b0/a7e8b0d3ef1b81902dcb1cea4766bf3b.jpg" style="
+                  border-radius: 20px;
+                  height: 250px;
+                  width: 100%;
+                  object-fit: cover;
+                  display: block;
+                " alt="Vestido Mauve">
+              <div style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+                  padding: 20px;
+                  color: white;
+                ">
+                <h4 style="margin: 0; font-size: 1rem; color: white">
+                  Vestido Mauve
+                </h4>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://br.shein.com/Plus-Size-Long-Dress-V-Neck-Short-Sleeve-p-68908800.html?src_identifier=st%3D2%60sc%3Dvestido%20rosa%20queimado%60sr%3D0%60ps%3D1&amp;src_module=search&amp;src_tab_page_id=page_goods_detail1764449197161&amp;mallCode=2&amp;pageListType=4&amp;imgRatio=3-4&amp;detailBusinessFrom=0-1_68908800%7C0-2&amp;pageListType=4" target="_blank" style="text-decoration: none; color: inherit">
+            <div style="
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                border-radius: 20px;
+                transition: transform 0.3s;
+              ">
+              <img src="https://img.ltwebstatic.com/v4/j/spmp/2025/04/21/af/17452497426d69210c76400e924949293ba06f066d_thumbnail_900x.webp" style="
+                  border-radius: 20px;
+                  height: 250px;
+                  width: 100%;
+                  object-fit: cover;
+                  display: block;
+                " alt="Vestido Mauve">
+              <div style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+                  padding: 20px;
+                  color: white;
+                ">
+                <h4 style="margin: 0; font-size: 1rem; color: white">
+                  Vestido Rosa Queimado
+                </h4>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://br.shein.com/Plus-Elegant-Butterfly-Sleeve-Chiffon-Sequin-Lace-Bodice-Evening-Party-Long-Dress-p-37706727.html?src_identifier=st%3D2%60sc%3Dvestido%20rosa%20empoeirado%60sr%3D0%60ps%3D1&amp;src_module=search&amp;src_tab_page_id=page_home1764449167015&amp;mallCode=1&amp;pageListType=4&amp;imgRatio=3-4&amp;detailBusinessFrom=0-1_37706727%7C0-2&amp;pageListType=4" target="_blank" style="text-decoration: none; color: inherit">
+            <div style="
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                border-radius: 20px;
+                transition: transform 0.3s;
+              ">
+              <img src="https://img.ltwebstatic.com/images3_pi/2024/06/27/83/17194570129a17d47624585b5af8e476fa3c83d57e_thumbnail_900x.webp" class="crop-image-container__img" style="
+                  border-radius: 20px;
+                  height: 250px;
+                  width: 100%;
+                  object-fit: cover;
+                  display: block;
+                " alt="Vestido Rosa Empoeirado">
+              <div style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+                  padding: 20px;
+                  color: white;
+                ">
+                <h4 style="margin: 0; font-size: 1rem; color: white">
+                  Vestido Rosa Empoeirado
+                </h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PADRINHOS -->
+    <section id="padrinhos">
+      <div style="text-align: center; margin-bottom: 40px">
+        <h2>Padrinhos</h2>
+        <p>Clássico, atemporal e elegante.</p>
+      </div>
+
+      <div class="cards-wrapper">
+        <div class="card-moderno">
+          <!-- Terno Cinza/Escuro -->
+          <img src="https://i.pinimg.com/1200x/94/39/7d/94397d3f572c15cde28b17156d557545.jpg" style="border-radius: 20px" alt="Terno">
+          <h3 style="color: var(--verde-oliva)">O Traje</h3>
+          <p>Terno Cinza Claro ou Médio.</p>
+        </div>
+        <div class="card-moderno">
+          <!-- Gravata cinza -->
+          <img src="https://i.pinimg.com/736x/65/b5/3d/65b53d464c86669354869857d0e73b32.jpg" style="border-radius: 20px" alt="Gravata">
+          <h3 style="color: var(--verde-oliva)">A Gravata</h3>
+          <p><strong>Cor: Cinza claro</strong></p>
+          <p>
+            É um presente nosso para usar no dia e, posteriormente, nos demais
+            eventos.
+          </p>
+        </div>
+        <div class="card-moderno">
+          <!-- Sapatos Sociais -->
+          <img src="https://images.unsplash.com/photo-1668069226492-508742b03147?fm=jpg&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2FwYXRvcyUyMG1hc2N1bGlub3N8ZW58MHx8MHx8fDA%3D&amp;ixlib=rb-4.1.0&amp;q=60&amp;w=3000" style="border-radius: 20px" alt="Sapatos">
+          <h3 style="color: var(--verde-oliva)">Detalhes</h3>
+          <p>Camisa Branca (sempre).</p>
+          <p>Sapato Social Preto ou Café.</p>
+          <p>Cinto Preto ou Café.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VÍDEOS INSPIRAÇÃO -->
+    <section id="videos">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 50px">
+        <h2>Nós de gravata</h2>
+        <p>
+          Nós sabemos que muitos têm dificuldades com os temidos "nós de
+          gravata" - não achamos que seja o seu caso - mas deixamos aqui alguns
+          tutoriais para que você possa se inspirar.
+        </p>
+      </div>
+
+      <div class="video-grid">
+        <a class="video-card" href="https://www.youtube.com/watch?v=FImqvfl9EAw" target="_blank" rel="noopener">
+          <div class="video-frame">
+            <img class="video-thumb" src="https://img.youtube.com/vi/FImqvfl9EAw/hqdefault.jpg" alt="Como dar nó em gravata">
+            <div class="play-overlay">▶</div>
+          </div>
+          <div class="video-meta">
+            <strong>Como dar nó em gravata</strong>
+            <small>Tutorial rápido</small>
+          </div>
+          <p class="video-link-print">YouTube: https://www.youtube.com/watch?v=FImqvfl9EAw</p>
+        </a>
+
+        <a class="video-card" href="https://www.youtube.com/watch?v=0Pdg2gXx2t8" target="_blank" rel="noopener">
+          <div class="video-frame">
+            <img class="video-thumb" src="https://img.youtube.com/vi/0Pdg2gXx2t8/hqdefault.jpg" alt="Nó Double Windsor">
+            <div class="play-overlay">▶</div>
+          </div>
+          <div class="video-meta">
+            <strong>Nó Double Windsor</strong>
+            <small>Uma alternativa</small>
+          </div>
+          <p class="video-link-print">YouTube: https://www.youtube.com/watch?v=0Pdg2gXx2t8</p>
+        </a>
+
+        <a class="video-card" href="https://www.youtube.com/watch?v=RgBtPaNH7jY" target="_blank" rel="noopener">
+          <div class="video-frame">
+            <img class="video-thumb" src="https://img.youtube.com/vi/RgBtPaNH7jY/hqdefault.jpg" alt="Aprenda de uma vez">
+            <div class="play-overlay">▶</div>
+          </div>
+          <div class="video-meta">
+            <strong>Aprenda de uma vez</strong>
+            <small>Short rápido e definitivo para nó de gravata</small>
+          </div>
+          <p class="video-link-print">YouTube: https://www.youtube.com/watch?v=RgBtPaNH7jY</p>
+        </a>
+      </div>
+    </section>
+    <!-----DEMOISELLE----->
+    <section id="demoiselle">
+      <!-- Conteúdo da seção -->
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 50px">
+        <h2>Demoiselle</h2>
+        <p>
+          A Demoiselle é uma dama de honra adolescente ou adulta que ainda não é casada, pode entrar
+          sozinha ou acompanhada. Representa o apoio emocional da noiva.
+        </p>
+      </div>
+
+      <div class="grid-moderno">
+        <div>
+          <h3 style="color: var(--verde-oliva)">
+            A Paleta: Sunset &amp; Nature
+          </h3>
+          <p>
+            Escolhemos duas opções de cores para nossa Demoiselle que pode
+            abusar dos brilhos, dos detalhes e dos vestidos esfoaçantes! Pode ser Midi ou Longo, o que achar que combina mais com sua personalidade.
+          </p>
+
+          <div class="palette-container">
+            <div class="color-item">
+              <div class="color-dot" style="background-color: #ffc0cb"></div>
+              <span class="color-name">Rosa Pálido Clássico</span>
+            </div>
+            <div class="color-item">
+              <div class="color-dot" style="background-color: #ffb6c1"></div>
+              <span class="color-name">Rosa Claro</span>
+            </div>
+            <div class="color-item">
+              <div class="color-dot" style="background-color: #f0c4cf"></div>
+              <span class="color-name">Rosa Chá</span>
+            </div>
+            <div class="color-item">
+              <div class="color-dot" style="background-color: #9CAF88"></div>
+              <span class="color-name">Verde Sálvia</span>
+            </div>
+            <div class="color-item">
+              <div class="color-dot" style="background-color: #B2D8B1"></div>
+              <span class="color-name">Verde Menta Suave</span>
+            </div>
+          </div>
+
+          <p><small>REFERÊNCIA: PANTONE 19-1522 TCX</small></p>
+        </div>
+
+        <!-- Grid de Demoiselle -->
+        <p><div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px">
+            
+            <!-- Madrinhas de Rosa/Marsala -->
+            <a href="https://br.pinterest.com/pin/4925880833341996/" target="_blank" style="text-decoration: none; color: inherit">
+              <div style="
+                  position: relative;
+                  cursor: pointer;
+                  overflow: hidden;
+                  border-radius: 20px;
+                  transition: transform 0.3s;
+                ">
+                <img src="https://i.pinimg.com/1200x/06/d9/87/06d9877d98ae37167a37d9f87f3e2c6a.jpg" style="
+                    border-radius: 20px;
+                    height: 200px;
+                    width: 200px;
+                    object-fit: cover;
+                    display: block;
+                  " alt="Vestido Rosa Pálido Brilhante">
+                <div style="
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(
+                      transparent,
+                      rgba(0, 0, 0, 0.7)
+                    );
+                    padding: 20px;
+                    color: white;
+                  ">
+                  <h4 style="margin: 0; font-size: 1rem; color: white">
+                    Vestido Rosa Pálido Brilhante
+                  </h4>
+                </div>
+              </div>
+            </a>
+            <!-- Buquê / Detalhe -->
+            <a href="https://www.ballbellas.com/products/elegant-taupe-pink-v-neck-short-sleeves-prom-dress-with-sequins?variant=93b07595-84cb-4d8f-8fd7-4c67e11cd7e5&amp;pp=0" target="_blank" style="text-decoration: none; color: inherit">
+              <div style="
+                  position: relative;
+                  cursor: pointer;
+                  overflow: hidden;
+                  border-radius: 20px;
+                  transition: transform 0.3s;
+                ">
+                <img src="https://img.fantaskycdn.com/291e1dacf3588ac4430cb70f3eb292a6_900x.jpg" style="
+                    border-radius: 20px;
+                    height: 200px;
+                    width: 200px;
+                    object-fit: cover;
+                    display: block;
+                  " alt="Vestido Rosa Chá">
+                <div style="
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(
+                      transparent,
+                      rgba(0, 0, 0, 0.7)
+                    );
+                    padding: 20px;
+                    color: white;
+                  ">
+                  <h4 style="margin: 0; font-size: 1rem; color: white">
+                    Vestido Rosa Chá Brilhante
+                  </h4>
+                </div>
+              </div>
+            </a>
+            <a href="https://br.pinterest.com/pin/368521182028473008/" target="_blank" style="text-decoration: none; color: inherit">
+              <div style="
+                  position: relative;
+                  cursor: pointer;
+                  overflow: hidden;
+                  border-radius: 20px;
+                  transition: transform 0.3s;
+                ">
+                <img src="https://i.pinimg.com/1200x/13/b1/7e/13b17eb5e23168d2b3976e405b4ded1a.jpg" style="
+                    border-radius: 20px;
+                    height: 200px;
+                    width: 200px;
+                    object-fit: cover;
+                    display: block;
+                  " alt="Vestido Verde Sálvia">
+                <div style="
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(
+                      transparent,
+                      rgba(0, 0, 0, 0.7)
+                    );
+                    padding: 20px;
+                    color: white;
+                  ">
+                  <h4 style="margin: 0; font-size: 1rem; color: white">
+                    Vestido Verde Sálvia
+                  </h4>
+                </div>
+              </div>
+            </a>
+            <a href="https://br.pinterest.com/pin/872783602820648944/" target="_blank" style="text-decoration: none; color: inherit">
+              <div style="
+                  position: relative;
+                  cursor: pointer;
+                  overflow: hidden;
+                  border-radius: 20px;
+                  transition: transform 0.3s;
+                ">
+                <img src="https://i.pinimg.com/736x/14/f3/bb/14f3bbe7ea44faea16587142af0d618e.jpg" style="
+                    border-radius: 20px;
+                    height: 200px;
+                    width: 200px;
+                    object-fit: cover;
+                    display: block;
+                  " alt="Vestido Verde Serenity">
+                <div style="
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(
+                      transparent,
+                      rgba(0, 0, 0, 0.7)
+                    );
+                    padding: 20px;
+                    color: white;
+                  ">
+                  <h4 style="margin: 0; font-size: 1rem; color: white">
+                    Vestido Verde Serenity
+                  </h4>
+                </div>
+              </div>
+            </a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="logo-container" style="width: 200px; height: 200px; margin: 0 auto 20px">
+        <img src="https://i.imgur.com/TuA58sQ.png" alt="Danielli &amp; Giovanni" style="width: 100%; height: 100%; object-fit: contain">
+      </div>
+      <p>Por favor, confirmem sua presença até <strong>01/06/2026</strong></p>
+      <p><small>Com amor, Danielli &amp; Giovanni</small></p>
+    </footer>
+  
+
+</body></html>
