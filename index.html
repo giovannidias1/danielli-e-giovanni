@@ -438,8 +438,59 @@
         color: rgba(255, 255, 255, 0.7);
       }
 
+      /* Trilha sonora de fundo */
+      .music-player {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .music-control {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 1300;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+      }
+
+      .music-button {
+        border: 1px solid var(--verde-oliva);
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--verde-oliva);
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 10px 14px;
+        cursor: pointer;
+        backdrop-filter: blur(4px);
+      }
+
+      .music-button:hover {
+        background: var(--verde-oliva);
+        color: #fff;
+      }
+
+      .music-status {
+        color: #4f4f4f;
+        font-size: 0.72rem;
+        background: rgba(255, 255, 255, 0.92);
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
       /* --- 7. AJUSTES MOBILE --- */
       @media (max-width: 768px) {
+        body {
+          overflow-x: hidden;
+        }
+
         h1 {
           font-size: 2.5rem;
         }
@@ -464,6 +515,63 @@
 
         #local {
           padding: 60px 20px;
+        }
+
+        /* Demoiselle: evita estouro e empilhamento quebrado no mobile */
+        #demoiselle .palette-container {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 12px;
+        }
+
+        #demoiselle .color-item {
+          min-width: 78px;
+        }
+
+        #demoiselle [style*="grid-template-columns: 1fr 1fr"] {
+          grid-template-columns: 1fr !important;
+          gap: 12px !important;
+        }
+
+        #demoiselle [style*="grid-template-columns: 1fr 1fr"] a {
+          display: block;
+        }
+
+        #demoiselle [style*="grid-template-columns: 1fr 1fr"] img {
+          width: 100% !important;
+          height: 240px !important;
+        }
+
+        /* Footer: reduz e centraliza melhor no mobile */
+        footer {
+          padding: 52px 16px;
+        }
+
+        footer .logo-container {
+          width: min(170px, 58vw) !important;
+          height: min(170px, 58vw) !important;
+          margin: 0 auto 14px !important;
+        }
+
+        footer p {
+          max-width: 320px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .music-control {
+          right: 12px;
+          top: 12px;
+          bottom: auto;
+        }
+
+        .music-button {
+          font-size: 0.68rem;
+          padding: 8px 10px;
+        }
+
+        .music-status {
+          display: none;
         }
       }
 
@@ -502,6 +610,11 @@
         }
 
         .no-print {
+          display: none !important;
+        }
+
+        .music-control,
+        .music-player {
           display: none !important;
         }
 
@@ -799,6 +912,12 @@
       <a href="#padrinhos">Padrinhos</a>
       <a href="#demoiselle">Demoiselle</a>
     </nav>
+
+    <div class="music-control no-print">
+      <button id="musicToggle" class="music-button" type="button" aria-pressed="false">Tocar música</button>
+      <small id="musicStatus" class="music-status">Trilha em loop</small>
+    </div>
+    <div id="ytMusicPlayer" class="music-player no-print" aria-hidden="true"></div>
 
     <!-- HEADER / CAPA -->
     <header id="inicio">
@@ -1429,6 +1548,79 @@
       <p>Por favor, confirmem sua presença até <strong>01/06/2026</strong></p>
       <p><small>Com amor, Danielli &amp; Giovanni</small></p>
     </footer>
-  
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      (function () {
+        var videoId = "lrN940Xh4jQ";
+        var button = document.getElementById("musicToggle");
+        var status = document.getElementById("musicStatus");
+        var player = null;
+        var playing = false;
+
+        function setUi(isPlaying) {
+          playing = isPlaying;
+          button.setAttribute("aria-pressed", isPlaying ? "true" : "false");
+          button.textContent = isPlaying ? "Pausar música" : "Tocar música";
+        }
+
+        button.addEventListener("click", function () {
+          if (!player) {
+            status.textContent = "Carregando música...";
+            return;
+          }
+
+          if (playing) {
+            player.pauseVideo();
+            setUi(false);
+          } else {
+            player.playVideo();
+          }
+        });
+
+        setUi(false);
+        status.textContent = "Tentando iniciar automaticamente...";
+
+        var previousReady = window.onYouTubeIframeAPIReady;
+        window.onYouTubeIframeAPIReady = function () {
+          if (typeof previousReady === "function") {
+            previousReady();
+          }
+
+          player = new YT.Player("ytMusicPlayer", {
+            height: "0",
+            width: "0",
+            videoId: videoId,
+            playerVars: {
+              autoplay: 1,
+              controls: 0,
+              disablekb: 1,
+              fs: 0,
+              loop: 1,
+              modestbranding: 1,
+              playlist: videoId,
+              rel: 0,
+              playsinline: 1
+            },
+            events: {
+              onReady: function (event) {
+                event.target.setVolume(35);
+                event.target.playVideo();
+                status.textContent = "Se o som não iniciar, clique em Tocar música";
+              },
+              onStateChange: function (event) {
+                if (event.data === YT.PlayerState.PLAYING) {
+                  setUi(true);
+                } else if (event.data === YT.PlayerState.PAUSED) {
+                  setUi(false);
+                } else if (event.data === YT.PlayerState.ENDED) {
+                  event.target.playVideo();
+                }
+              }
+            }
+          });
+        };
+      })();
+    </script>
 
 </body></html>
