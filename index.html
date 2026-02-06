@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600;6..96,800&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 
     <style>
-      /* --- 1. PALETA DE CORES (MODERNA & ORGÂNICA) --- */
+      /* --- 1. PALETA DE CORES (MODERNA & ORGÃ‚NICA) --- */
       :root {
         --marsala: #7a2e39;
         --mauve: #9e565b;
         --verde-oliva: #535d4b;
-        /* Novo destaque para botões/footer */
+        /* Novo destaque para botÃµes/footer */
         --verde-salvia: #bcc5a8;
-        /* Fundo da sessão Local */
+        /* Fundo da sessÃ£o Local */
         --verde-suave-bg: #eaece6;
         /* Fundo alternativo muito claro */
         --preto-suave: #222222;
@@ -25,7 +25,7 @@
         --branco: #ffffff;
       }
 
-      /* --- 2. CONFIGURAÇÕES GERAIS --- */
+      /* --- 2. CONFIGURAÃ‡Ã•ES GERAIS --- */
       * {
         box-sizing: border-box;
       }
@@ -154,7 +154,7 @@
         letter-spacing: 4px;
         font-size: 0.9rem;
         color: var(--verde-oliva);
-        /* Subtítulo em Verde */
+        /* SubtÃ­tulo em Verde */
         margin-bottom: 40px;
         font-weight: 600;
       }
@@ -164,13 +164,13 @@
         font-style: italic;
         color: #555;
         border-top: 1px solid var(--verde-salvia);
-        /* Linhas em verde sálvia */
+        /* Linhas em verde sÃ¡lvia */
         border-bottom: 1px solid var(--verde-salvia);
         padding: 20px 0;
         margin-top: 20px;
       }
 
-      /* --- 5. LAYOUT DE SESSÕES --- */
+      /* --- 5. LAYOUT DE SESSÃ•ES --- */
       section {
         padding: 100px 5%;
         max-width: 1200px;
@@ -194,7 +194,7 @@
         border-radius: 2px;
       }
 
-      /* --- 6. ELEMENTOS ESPECÍFICOS --- */
+      /* --- 6. ELEMENTOS ESPECÃFICOS --- */
       /* Data destaque */
       .big-date {
         font-family: "Bodoni Moda", serif;
@@ -205,7 +205,7 @@
         display: block;
       }
 
-      /* Botões em Verde Oliva */
+      /* BotÃµes em Verde Oliva */
       .btn-moderno {
         display: inline-block;
         margin-top: 20px;
@@ -294,7 +294,41 @@
         font-size: 0.9rem;
       }
 
-      /* Vídeos: cards clicáveis com thumbnail */
+      /* Indicador visual para imagens clicÃ¡veis */
+      #Vestidos a[target="_blank"] > div,
+      #demoiselle a[target="_blank"] > div,
+      #avos a[target="_blank"] > div {
+        position: relative;
+      }
+
+      #Vestidos a[target="_blank"] > div::after,
+      #demoiselle a[target="_blank"] > div::after,
+      #avos a[target="_blank"] > div::after {
+        content: "↗ Ver";
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.68rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.62);
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 999px;
+        padding: 5px 10px;
+        pointer-events: none;
+        transition: transform 0.25s ease, background 0.25s ease;
+      }
+
+      #Vestidos a[target="_blank"]:hover > div::after,
+      #demoiselle a[target="_blank"]:hover > div::after,
+      #avos a[target="_blank"]:hover > div::after {
+        transform: translateY(-2px);
+        background: rgba(0, 0, 0, 0.78);
+      }
+
+      /* VÃ­deos: cards clicÃ¡veis com thumbnail */
       .video-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -357,12 +391,12 @@
       font-size: 0.85rem;
     }
 
-    /* Links extras apenas para impressão */
+    /* Links extras apenas para impressÃ£o */
     .video-link-print {
       display: none;
     }
 
-      /* Imprimir: manter título, subtítulo e grid de vestidos na mesma página */
+      /* Imprimir: manter tÃ­tulo, subtÃ­tulo e grid de vestidos na mesma pÃ¡gina */
       #Vestidos,
       #Vestidos h2,
       #Vestidos p,
@@ -372,7 +406,7 @@
         break-inside: avoid;
       }
 
-      /* Estilo Específico para Seção Local (Fundo Verde) */
+      /* Estilo EspecÃ­fico para SeÃ§Ã£o Local (Fundo Verde) */
       #local {
         background-color: var(--verde-suave-bg);
         max-width: 100%;
@@ -398,7 +432,7 @@
         margin: 0 auto;
       }
 
-      /* Botões dentro do local precisam de contraste */
+      /* BotÃµes dentro do local precisam de contraste */
       #local .btn-moderno {
         border-color: var(--marsala);
         color: var(--marsala);
@@ -575,17 +609,17 @@
         }
       }
 
-      /* --- 8. IMPRESSÃO (PDF) --- */
+      /* --- 8. IMPRESSÃƒO (PDF) --- */
       @media print {
-        /* Menu impresso como sumário clicável */
-        /* Esconde o menu fixo do topo na impressão */
+        /* Menu impresso como sumÃ¡rio clicÃ¡vel */
+        /* Esconde o menu fixo do topo na impressÃ£o */
         nav {
           display: none !important;
         }
         
-        /* Adiciona índice de navegação após o texto de introdução no header */
+        /* Adiciona Ã­ndice de navegaÃ§Ã£o apÃ³s o texto de introduÃ§Ã£o no header */
         .header-text::after {
-          content: 'Capa • O Evento • Local • Madrinhas • Padrinhos • Demoiselle • Avós';
+          content: 'Capa â€¢ O Evento â€¢ Local â€¢ Madrinhas â€¢ Padrinhos â€¢ Demoiselle â€¢ AvÃ³s';
           display: block;
           margin-top: 12mm;
           padding-top: 10mm;
@@ -610,6 +644,12 @@
         }
 
         .no-print {
+          display: none !important;
+        }
+
+        #Vestidos a[target="_blank"] > div::after,
+        #demoiselle a[target="_blank"] > div::after,
+        #avos a[target="_blank"] > div::after {
           display: none !important;
         }
 
@@ -647,7 +687,7 @@
           margin-bottom: 12pt;
         }
 
-        /* Margens confortáveis e largura controlada */
+        /* Margens confortÃ¡veis e largura controlada */
         @page {
           margin: 0;
           size: auto;
@@ -666,7 +706,7 @@
           padding: 24mm 16mm 18mm;
         }
 
-        /* Capa ocupa a primeira página, mas sem desperdiçar espaço */
+        /* Capa ocupa a primeira pÃ¡gina, mas sem desperdiÃ§ar espaÃ§o */
         header {
           padding: 30mm 16mm 20mm;
           height: auto;
@@ -699,7 +739,7 @@
           margin: 6mm 0 3mm;
         }
 
-        /* Grids com espaçamento de revista */
+        /* Grids com espaÃ§amento de revista */
         .grid-moderno {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -724,27 +764,27 @@
         .palette-container {
           justify-content: flex-start;
         }
-        /* Wrapper para cada vídeo + texto */
-        /* Estilo para garantir que os vídeos fiquem lado a lado na impressão */
+        /* Wrapper para cada vÃ­deo + texto */
+        /* Estilo para garantir que os vÃ­deos fiquem lado a lado na impressÃ£o */
         .video-grid {
           /* Usa flexbox para alinhamento horizontal */
           display: flex;
-          /* Garante que os itens não quebrem linha, mas fiquem apertados */
+          /* Garante que os itens nÃ£o quebrem linha, mas fiquem apertados */
           flex-wrap: nowrap;
-          /* Alinha os vídeos ao centro do contêiner */
+          /* Alinha os vÃ­deos ao centro do contÃªiner */
           justify-content: center;
-          /* Importante: Evita que o bloco quebre no meio do conteúdo */
+          /* Importante: Evita que o bloco quebre no meio do conteÃºdo */
           page-break-inside: avoid;
         }
 
-        /* Reduz a largura e remove margens desnecessárias dos itens de vídeo */
+        /* Reduz a largura e remove margens desnecessÃ¡rias dos itens de vÃ­deo */
         .video-item {
-          /* Usa 30% da largura do contêiner para caber 3 lado a lado */
+          /* Usa 30% da largura do contÃªiner para caber 3 lado a lado */
           flex-basis: 30%;
-          min-width: 70mm; /* Garante um tamanho mínimo em milímetros */
-          max-width: 90mm; /* Garante que não fique muito largo */
-          margin: 0 5mm; /* Adiciona um espaço pequeno entre os vídeos */
-          /* Importante: Evita que o vídeo individual quebre de página */
+          min-width: 70mm; /* Garante um tamanho mÃ­nimo em milÃ­metros */
+          max-width: 90mm; /* Garante que nÃ£o fique muito largo */
+          margin: 0 5mm; /* Adiciona um espaÃ§o pequeno entre os vÃ­deos */
+          /* Importante: Evita que o vÃ­deo individual quebre de pÃ¡gina */
           page-break-inside: avoid;
 
           /* Ajuste do layout interno */
@@ -753,31 +793,31 @@
           gap: 5px;
         }
 
-        /* Reduz o iframe na impressão para caber */
+        /* Reduz o iframe na impressÃ£o para caber */
         .video-item iframe {
-          /* Ocupa a largura máxima do seu contêiner pai (.video-item) */
+          /* Ocupa a largura mÃ¡xima do seu contÃªiner pai (.video-item) */
           width: 100% !important;
-          /* Defina uma altura fixa em unidades de impressão (mm) */
+          /* Defina uma altura fixa em unidades de impressÃ£o (mm) */
           height: 50mm !important;
           border-radius: 5px;
           display: block;
         }
 
-        /* Ajuste para o texto abaixo do vídeo */
+        /* Ajuste para o texto abaixo do vÃ­deo */
         .video-item p {
           font-size: 8pt;
           text-align: center;
           margin: 0;
         }
 
-        /* Mostrar botões (links) no print */
+        /* Mostrar botÃµes (links) no print */
         .btn-moderno {
           display: inline-block !important;
           color: #1f1f1f !important;
           border-color: #1f1f1f !important;
         }
 
-        /* Vestidos: manter tudo na mesma página e ajustar alturas */
+        /* Vestidos: manter tudo na mesma pÃ¡gina e ajustar alturas */
         #Vestidos {
           padding: 12mm 16mm 12mm;
           page-break-inside: avoid;
@@ -845,7 +885,7 @@
         }
 
 
-        /* Vídeos: layout para impressão sem iframe */
+        /* VÃ­deos: layout para impressÃ£o sem iframe */
         #videos .video-grid {
           display: grid !important;
           grid-template-columns: repeat(2, minmax(80mm, 1fr));
@@ -911,11 +951,11 @@
       <a href="#madrinhas">Madrinhas</a>
       <a href="#padrinhos">Padrinhos</a>
       <a href="#demoiselle">Demoiselle</a>
-      <a href="#avos">Avós</a>
+      <a href="#avos">AvÃ³s</a>
     </nav>
 
     <div class="music-control no-print">
-      <button id="musicToggle" class="music-button" type="button" aria-pressed="false">Tocar música</button>
+      <button id="musicToggle" class="music-button" type="button" aria-pressed="false">Tocar mÃºsica</button>
       <small id="musicStatus" class="music-status">Trilha em loop</small>
     </div>
     <div id="ytMusicPlayer" class="music-player no-print" aria-hidden="true"></div>
@@ -932,8 +972,8 @@
       <h1>Danielli &amp; Giovanni</h1>
 
       <div class="header-text">
-        "Para nós, o dia mais importante de nossas vidas só faria sentido se
-        tivéssemos ao nosso lado as pessoas mais importantes da nossa história."
+        "Para nÃ³s, o dia mais importante de nossas vidas sÃ³ faria sentido se
+        tivÃ©ssemos ao nosso lado as pessoas mais importantes da nossa histÃ³ria."
       </div>
     </header>
 
@@ -941,17 +981,17 @@
     <section id="evento">
       <div class="grid-moderno">
         <div>
-          <!-- Imagem de Casal / Decoração -->
+          <!-- Imagem de Casal / DecoraÃ§Ã£o -->
           <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&amp;w=800&amp;auto=format&amp;fit=crop" loading="lazy" style="border-radius: 20px" alt="Casamento Moderno">
         </div>
         <div>
           <h3 style="color: var(--verde-oliva)">Save the Date</h3>
           <h2 style="margin-bottom: 0">01 de Agosto</h2>
           <span class="big-date">2026</span>
-          <p><strong>Horário:</strong> 16h00 — Pôr do Sol</p>
+          <p><strong>HorÃ¡rio:</strong> 16h00 â€” PÃ´r do Sol</p>
           <p>
-            Preparamos um final de tarde inesquecível. A cerimônia será ao ar
-            livre, seguida de uma recepção intimista e elegante.
+            Preparamos um final de tarde inesquecÃ­vel. A cerimÃ´nia serÃ¡ ao ar
+            livre, seguida de uma recepÃ§Ã£o intimista e elegante.
           </p>
           <p style="color: var(--verde-oliva)">
             <em>Dress Code: Passeio Completo / Social</em>
@@ -961,11 +1001,11 @@
       <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee">
       <h3>Nossa Escolha de Padrinhos</h3>
         <div class="texto-recuado">
-        <p>Quando chegou o momento de, finalmente, definirmos quem seriam os nossos padrinhos, surgiu a primeira dúvida: "o que é um padrinho de casamento e para que serve?". Uma busca rápida no <em>Google</em> e nos deparamos com um breve texto que afirmava que são as pessoas escolhidas pelos noivos para serem testemunhas do matrimônio e estarem presentes como apoio emocional e prático durante os preparativos e após o casamento e que a escolha deveria se basear na afinidade e na confiança, porque os padrinhos são amigos e familiares importantes na vida do casal.</p>
-        <p>Pensando nisso, não foi uma tarefa fácil; conversamos muito sobre quem deveriam ser e houve uma curta lista de requisitos: deveriam ser pessoas que foram e são importantes em nossa vida, pessoas que fizeram parte de quem somos, além de serem pessoas que admiramos e que poderão dar bons conselhos na hora da dificuldade. Escolhemos aqueles que gostaríamos de honrar, assim como cada um tem nos honrado.</p>
-        <p>É um privilégio imenso ter compartilhado tantos momentos com vocês - desde os bons até os mais desafiadores - e não poderíamos não convidá-los para participar do evento e decisão mais importantes de nossas vidas. O nosso <em>"sim"</em> não estaria completo sem a presença de vocês, porque também é sobre quem nos suportou e apoiou até o final da nossa vida de solteiros e nos acompanhou e entregou até o altar.</p>
-        <p>Somos gratos a Deus pela vida de cada um de vocês e pedimos a Ele que abençoe a cada um abundantemente, assim como vocês têm abençoado a nossa com tanto carinho, apoio e amor.</p>
-        <p>Deus os abençoe por aceitar fazer parte do dia mais feliz de nossas vidas e apenas o começo de nossa jornada.</p>
+        <p>Quando chegou o momento de, finalmente, definirmos quem seriam os nossos padrinhos, surgiu a primeira dÃºvida: "o que Ã© um padrinho de casamento e para que serve?". Uma busca rÃ¡pida no <em>Google</em> e nos deparamos com um breve texto que afirmava que sÃ£o as pessoas escolhidas pelos noivos para serem testemunhas do matrimÃ´nio e estarem presentes como apoio emocional e prÃ¡tico durante os preparativos e apÃ³s o casamento e que a escolha deveria se basear na afinidade e na confianÃ§a, porque os padrinhos sÃ£o amigos e familiares importantes na vida do casal.</p>
+        <p>Pensando nisso, nÃ£o foi uma tarefa fÃ¡cil; conversamos muito sobre quem deveriam ser e houve uma curta lista de requisitos: deveriam ser pessoas que foram e sÃ£o importantes em nossa vida, pessoas que fizeram parte de quem somos, alÃ©m de serem pessoas que admiramos e que poderÃ£o dar bons conselhos na hora da dificuldade. Escolhemos aqueles que gostarÃ­amos de honrar, assim como cada um tem nos honrado.</p>
+        <p>Ã‰ um privilÃ©gio imenso ter compartilhado tantos momentos com vocÃªs - desde os bons atÃ© os mais desafiadores - e nÃ£o poderÃ­amos nÃ£o convidÃ¡-los para participar do evento e decisÃ£o mais importantes de nossas vidas. O nosso <em>"sim"</em> nÃ£o estaria completo sem a presenÃ§a de vocÃªs, porque tambÃ©m Ã© sobre quem nos suportou e apoiou atÃ© o final da nossa vida de solteiros e nos acompanhou e entregou atÃ© o altar.</p>
+        <p>Somos gratos a Deus pela vida de cada um de vocÃªs e pedimos a Ele que abenÃ§oe a cada um abundantemente, assim como vocÃªs tÃªm abenÃ§oado a nossa com tanto carinho, apoio e amor.</p>
+        <p>Deus os abenÃ§oe por aceitar fazer parte do dia mais feliz de nossas vidas e apenas o comeÃ§o de nossa jornada.</p>
         </div>
     </section>
 
@@ -975,17 +1015,17 @@
         <!-- Inverte a ordem visualmente (Texto esq, Foto dir) -->
         <div class="local-gallery" style="direction: ltr">
           <!-- Volta o texto ao normal -->
-          <!-- Imagem do Espaço Martília -->
-          <img src="https://cdn0.casamentos.com.br/vendor/1032/3_2/960/jpg/1000407410_13_441032-173015277243955.jpeg" loading="lazy" alt="Espaço Martília - vista externa">
-          <img src="https://cdn0.casamentos.com.br/vendor/1032/3_2/960/jpg/1000407379_13_441032-173015279651931.jpeg" loading="lazy" alt="Espaço Martília - vista interna">
+          <!-- Imagem do EspaÃ§o MartÃ­lia -->
+          <img src="https://cdn0.casamentos.com.br/vendor/1032/3_2/960/jpg/1000407410_13_441032-173015277243955.jpeg" loading="lazy" alt="EspaÃ§o MartÃ­lia - vista externa">
+          <img src="https://cdn0.casamentos.com.br/vendor/1032/3_2/960/jpg/1000407379_13_441032-173015279651931.jpeg" loading="lazy" alt="EspaÃ§o MartÃ­lia - vista interna">
         </div>
         <div style="direction: ltr; text-align: left">
-          <h3>O Cenário</h3>
-          <h2>Espaço Martília</h2>
-          <p>R. Ernesto Vidotti Filho, 115<br>São Carlos</p>
+          <h3>O CenÃ¡rio</h3>
+          <h2>EspaÃ§o MartÃ­lia</h2>
+          <p>R. Ernesto Vidotti Filho, 115<br>SÃ£o Carlos</p>
           <p>
-            Um local que respira história e natureza. A cerimônia e a festa
-            acontecerão no mesmo espaço para o conforto de todos.
+            Um local que respira histÃ³ria e natureza. A cerimÃ´nia e a festa
+            acontecerÃ£o no mesmo espaÃ§o para o conforto de todos.
           </p>
 
           <a href="https://maps.app.goo.gl/1ZgbK3SkT5t6EZBS8" class="btn-moderno">Google Maps</a>
@@ -999,7 +1039,7 @@
       <div style="text-align: center; max-width: 700px; margin: 0 auto 50px">
         <h2>Madrinhas</h2>
         <p>
-          A paleta foi escolhida para harmonizar com o pôr do sol e a natureza
+          A paleta foi escolhida para harmonizar com o pÃ´r do sol e a natureza
           local. Sintam-se livres para escolher o modelo que mais valoriza sua
           beleza.
         </p>
@@ -1012,7 +1052,7 @@
           </h3>
           <p>
             Sugerimos tecidos fluidos, sem brilho excessivo. Apostem na
-            elegância e leveza.
+            elegÃ¢ncia e leveza.
           </p>
 
           <div class="palette-container">
@@ -1036,10 +1076,10 @@
             </div>
           </div>
 
-          <p><small>REFERÊNCIA: PANTONE 19-1522 TCX</small></p>
+          <p><small>REFERÃŠNCIA: PANTONE 19-1522 TCX</small></p>
         </div>
 
-        <!-- Grid de Inspiração Madrinhas -->
+        <!-- Grid de InspiraÃ§Ã£o Madrinhas -->
         <div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px">
             <!-- Madrinhas de Rosa/Marsala -->
@@ -1049,7 +1089,7 @@
                 width: 100%;
                 object-fit: cover;
               ">
-            <!-- Buquê / Detalhe -->
+            <!-- BuquÃª / Detalhe -->
             <img src="imgs/drink.jpg" loading="lazy" style="
                 border-radius: 20px;
                 height: 250px;
@@ -1064,10 +1104,10 @@
     <!-- Exemplos de Vestidos com Links -->
     
       <div style="text-align: center; max-width: 700px; margin: 10px auto 50px">
-        <h2>Inspirações de Vestidos</h2>
+        <h2>InspiraÃ§Ãµes de Vestidos</h2>
 
         <p style="max-width: 600px; margin: 0 auto 40px">
-          Selecionamos algumas opções que seguem nossa paleta. Clique nas
+          Selecionamos algumas opÃ§Ãµes que seguem nossa paleta. Clique nas
           imagens para ver mais detalhes:
         </p>
 
@@ -1140,7 +1180,7 @@
             </div>
           </a>
 
-          <a href="https://br.pinterest.com/pin/234116880624487193/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit">
+          <a href="https://br.shein.com/Butterfly-Sleeve-Split-Thigh-Chiffon-Bridesmaid-Dress-Elegant-Dress-Bride-Dress-Birthday-Women-Outfits-Graduation-Dress-Formal-Dress-p-17654795.html?src_identifier=st%3D2%60sc%3Dvestido%20cor%20goiaba%60sr%3D0%60ps%3D1&amp;src_module=search&amp;src_tab_page_id=page_home1770388786903&amp;mallCode=2&amp;pageListType=4&amp;imgRatio=3-4&amp;detailBusinessFrom=0-1_17654795%7C0-2&amp;pageListType=4" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit">
             <div style="
                 position: relative;
                 cursor: pointer;
@@ -1148,7 +1188,7 @@
                 border-radius: 20px;
                 transition: transform 0.3s;
               ">
-              <img src="https://i.pinimg.com/736x/ce/7a/67/ce7a675f27912437badc0ca0a3bf3f52.jpg" loading="lazy" style="
+              <img src="https://img.ltwebstatic.com/images3_pi/2024/08/02/2c/1722587376f1ed39fa2bca3633f8dbf7b4a059c923_thumbnail_900x.webp" loading="lazy" style="
                   border-radius: 20px;
                   height: 250px;
                   width: 100%;
@@ -1233,7 +1273,7 @@
             </div>
           </a>
 
-          <a href="https://br.shein.com/Plus-Elegant-Butterfly-Sleeve-Chiffon-Sequin-Lace-Bodice-Evening-Party-Long-Dress-p-37706727.html?src_identifier=st%3D2%60sc%3Dvestido%20rosa%20empoeirado%60sr%3D0%60ps%3D1&amp;src_module=search&amp;src_tab_page_id=page_home1764449167015&amp;mallCode=1&amp;pageListType=4&amp;imgRatio=3-4&amp;detailBusinessFrom=0-1_37706727%7C0-2&amp;pageListType=4" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit">
+          <a href="https://br.shein.com/Modelyn-Women-V-Neck-Ruffle-Sleeve-Fashionable-Party-Gathering-Matched-Dress-Elegant-Evening-Party-Dress-Long-Evening-Dresses-p-40020781.html?src_identifier=st%3D2%60sc%3Dvestido%20cor%20goiaba%60sr%3D0%60ps%3D1&amp;src_module=search&amp;src_tab_page_id=page_home1770388786903&amp;mallCode=1&amp;pageListType=4&amp;imgRatio=3-4&amp;detailBusinessFrom=0-1_40020781%7C0-2&amp;pageListType=4" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit">
             <div style="
                 position: relative;
                 cursor: pointer;
@@ -1271,7 +1311,7 @@
     <section id="padrinhos">
       <div style="text-align: center; margin-bottom: 40px">
         <h2>Padrinhos</h2>
-        <p>Clássico, atemporal e elegante.</p>
+        <p>ClÃ¡ssico, atemporal e elegante.</p>
       </div>
 
       <div class="cards-wrapper">
@@ -1279,7 +1319,7 @@
           <!-- Terno Cinza/Escuro -->
           <img src="https://i.pinimg.com/1200x/94/39/7d/94397d3f572c15cde28b17156d557545.jpg" loading="lazy" style="border-radius: 20px" alt="Terno">
           <h3 style="color: var(--verde-oliva)">O Traje</h3>
-          <p>Terno Cinza Claro ou Médio.</p>
+          <p>Terno Cinza Claro ou MÃ©dio.</p>
         </div>
         <div class="card-moderno">
           <!-- Gravata cinza -->
@@ -1287,7 +1327,7 @@
           <h3 style="color: var(--verde-oliva)">A Gravata</h3>
           <p><strong>Cor: Cinza claro</strong></p>
           <p>
-            É um presente nosso para usar no dia e, posteriormente, nos demais
+            Ã‰ um presente nosso para usar no dia e, posteriormente, nos demais
             eventos.
           </p>
         </div>
@@ -1296,43 +1336,43 @@
           <img src="https://images.unsplash.com/photo-1668069226492-508742b03147?fm=jpg&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2FwYXRvcyUyMG1hc2N1bGlub3N8ZW58MHx8MHx8fDA%3D&amp;ixlib=rb-4.1.0&amp;q=60&amp;w=3000" loading="lazy" style="border-radius: 20px" alt="Sapatos">
           <h3 style="color: var(--verde-oliva)">Detalhes</h3>
           <p>Camisa Branca (sempre).</p>
-          <p>Sapato Social Preto ou Café.</p>
-          <p>Cinto Preto ou Café.</p>
+          <p>Sapato Social Preto ou CafÃ©.</p>
+          <p>Cinto Preto ou CafÃ©.</p>
         </div>
       </div>
     </section>
 
-    <!-- VÍDEOS INSPIRAÇÃO -->
+    <!-- VÃDEOS INSPIRAÃ‡ÃƒO -->
     <section id="videos">
       <div style="text-align: center; max-width: 700px; margin: 0 auto 50px">
-        <h2>Nós de gravata</h2>
+        <h2>NÃ³s de gravata</h2>
         <p>
-          Nós sabemos que muitos têm dificuldades com os temidos "nós de
-          gravata" - não achamos que seja o seu caso - mas deixamos aqui alguns
-          tutoriais para que você possa se inspirar.
+          NÃ³s sabemos que muitos tÃªm dificuldades com os temidos "nÃ³s de
+          gravata" - nÃ£o achamos que seja o seu caso - mas deixamos aqui alguns
+          tutoriais para que vocÃª possa se inspirar.
         </p>
       </div>
 
       <div class="video-grid">
         <a class="video-card" href="https://www.youtube.com/watch?v=FImqvfl9EAw" target="_blank" rel="noopener noreferrer">
           <div class="video-frame">
-            <img class="video-thumb" src="https://img.youtube.com/vi/FImqvfl9EAw/hqdefault.jpg" loading="lazy" alt="Como dar nó em gravata">
-            <div class="play-overlay">▶</div>
+            <img class="video-thumb" src="https://img.youtube.com/vi/FImqvfl9EAw/hqdefault.jpg" loading="lazy" alt="Como dar nÃ³ em gravata">
+            <div class="play-overlay">â–¶</div>
           </div>
           <div class="video-meta">
-            <strong>Como dar nó em gravata</strong>
-            <small>Tutorial rápido</small>
+            <strong>Como dar nÃ³ em gravata</strong>
+            <small>Tutorial rÃ¡pido</small>
           </div>
           <p class="video-link-print">YouTube: https://www.youtube.com/watch?v=FImqvfl9EAw</p>
         </a>
 
         <a class="video-card" href="https://www.youtube.com/watch?v=0Pdg2gXx2t8" target="_blank" rel="noopener noreferrer">
           <div class="video-frame">
-            <img class="video-thumb" src="https://img.youtube.com/vi/0Pdg2gXx2t8/hqdefault.jpg" loading="lazy" alt="Nó Double Windsor">
-            <div class="play-overlay">▶</div>
+            <img class="video-thumb" src="https://img.youtube.com/vi/0Pdg2gXx2t8/hqdefault.jpg" loading="lazy" alt="NÃ³ Double Windsor">
+            <div class="play-overlay">â–¶</div>
           </div>
           <div class="video-meta">
-            <strong>Nó Double Windsor</strong>
+            <strong>NÃ³ Double Windsor</strong>
             <small>Uma alternativa</small>
           </div>
           <p class="video-link-print">YouTube: https://www.youtube.com/watch?v=0Pdg2gXx2t8</p>
@@ -1341,11 +1381,11 @@
         <a class="video-card" href="https://www.youtube.com/watch?v=RgBtPaNH7jY" target="_blank" rel="noopener noreferrer">
           <div class="video-frame">
             <img class="video-thumb" src="https://img.youtube.com/vi/RgBtPaNH7jY/hqdefault.jpg" loading="lazy" alt="Aprenda de uma vez">
-            <div class="play-overlay">▶</div>
+            <div class="play-overlay">â–¶</div>
           </div>
           <div class="video-meta">
             <strong>Aprenda de uma vez</strong>
-            <small>Short rápido e definitivo para nó de gravata</small>
+            <small>Short rÃ¡pido e definitivo para nÃ³ de gravata</small>
           </div>
           <p class="video-link-print">YouTube: https://www.youtube.com/watch?v=RgBtPaNH7jY</p>
         </a>
@@ -1353,11 +1393,11 @@
     </section>
     <!-----DEMOISELLE----->
     <section id="demoiselle">
-      <!-- Conteúdo da seção -->
+      <!-- ConteÃºdo da seÃ§Ã£o -->
       <div style="text-align: center; max-width: 700px; margin: 0 auto 50px">
         <h2>Demoiselle</h2>
         <p>
-          A Demoiselle é uma dama de honra adolescente ou adulta que ainda não é casada, pode entrar
+          A Demoiselle Ã© uma dama de honra adolescente ou adulta que ainda nÃ£o Ã© casada, pode entrar
           sozinha ou acompanhada. Representa o apoio emocional da noiva.
         </p>
       </div>
@@ -1368,14 +1408,14 @@
             A Paleta: Sunset &amp; Nature
           </h3>
           <p>
-            Escolhemos duas opções de cores para nossa Demoiselle que pode
-            abusar dos brilhos, dos detalhes e dos vestidos esfoaçantes! Pode ser Midi ou Longo, o que achar que combina mais com sua personalidade.
+            Escolhemos duas opÃ§Ãµes de cores para nossa Demoiselle que pode
+            abusar dos brilhos, dos detalhes e dos vestidos esfoaÃ§antes! Pode ser Midi ou Longo, o que achar que combina mais com sua personalidade.
           </p>
 
           <div class="palette-container">
             <div class="color-item">
               <div class="color-dot" style="background-color: #ffc0cb"></div>
-              <span class="color-name">Rosa Pálido Clássico</span>
+              <span class="color-name">Rosa PÃ¡lido ClÃ¡ssico</span>
             </div>
             <div class="color-item">
               <div class="color-dot" style="background-color: #ffb6c1"></div>
@@ -1383,11 +1423,11 @@
             </div>
             <div class="color-item">
               <div class="color-dot" style="background-color: #f0c4cf"></div>
-              <span class="color-name">Rosa Chá</span>
+              <span class="color-name">Rosa ChÃ¡</span>
             </div>
             <div class="color-item">
               <div class="color-dot" style="background-color: #9CAF88"></div>
-              <span class="color-name">Verde Sálvia</span>
+              <span class="color-name">Verde SÃ¡lvia</span>
             </div>
             <div class="color-item">
               <div class="color-dot" style="background-color: #B2D8B1"></div>
@@ -1395,7 +1435,7 @@
             </div>
           </div>
 
-          <p><small>REFERÊNCIA: PANTONE 19-1522 TCX</small></p>
+          <p><small>REFERÃŠNCIA: PANTONE 19-1522 TCX</small></p>
         </div>
 
         <!-- Grid de Demoiselle -->
@@ -1417,7 +1457,7 @@
                     width: 200px;
                     object-fit: cover;
                     display: block;
-                  " alt="Vestido Rosa Pálido Brilhante">
+                  " alt="Vestido Rosa PÃ¡lido Brilhante">
                 <div style="
                     position: absolute;
                     bottom: 0;
@@ -1431,12 +1471,12 @@
                     color: white;
                   ">
                   <h4 style="margin: 0; font-size: 1rem; color: white">
-                    Vestido Rosa Pálido Brilhante
+                    Vestido Rosa PÃ¡lido Brilhante
                   </h4>
                 </div>
               </div>
             </a>
-            <!-- Buquê / Detalhe -->
+            <!-- BuquÃª / Detalhe -->
             <a href="https://www.ballbellas.com/products/elegant-taupe-pink-v-neck-short-sleeves-prom-dress-with-sequins?variant=93b07595-84cb-4d8f-8fd7-4c67e11cd7e5&amp;pp=0" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit">
               <div style="
                   position: relative;
@@ -1451,7 +1491,7 @@
                     width: 200px;
                     object-fit: cover;
                     display: block;
-                  " alt="Vestido Rosa Chá">
+                  " alt="Vestido Rosa ChÃ¡">
                 <div style="
                     position: absolute;
                     bottom: 0;
@@ -1465,7 +1505,7 @@
                     color: white;
                   ">
                   <h4 style="margin: 0; font-size: 1rem; color: white">
-                    Vestido Rosa Chá Brilhante
+                    Vestido Rosa ChÃ¡ Brilhante
                   </h4>
                 </div>
               </div>
@@ -1484,7 +1524,7 @@
                     width: 200px;
                     object-fit: cover;
                     display: block;
-                  " alt="Vestido Verde Sálvia">
+                  " alt="Vestido Verde SÃ¡lvia">
                 <div style="
                     position: absolute;
                     bottom: 0;
@@ -1498,7 +1538,7 @@
                     color: white;
                   ">
                   <h4 style="margin: 0; font-size: 1rem; color: white">
-                    Vestido Verde Sálvia
+                    Vestido Verde SÃ¡lvia
                   </h4>
                 </div>
               </div>
@@ -1541,13 +1581,13 @@
         </div>
     </section>
 
-    <!-- AVÓS -->
+    <!-- AVÃ“S -->
     <section id="avos">
       <div style="text-align: center; max-width: 760px; margin: 0 auto 50px">
-        <h2>Avós</h2>
+        <h2>AvÃ³s</h2>
         <p>
-          Clássico e elegante, representando a fase de ouro de um casamento.
-          Esta paleta valoriza os avós e traduz tantos anos de matrimônio,
+          ClÃ¡ssico e elegante, representando a fase de ouro de um casamento.
+          Esta paleta valoriza os avÃ³s e traduz tantos anos de matrimÃ´nio,
           superando as bodas de ouro.
         </p>
       </div>
@@ -1555,11 +1595,11 @@
       <div class="grid-moderno">
         <div>
           <h3 style="color: var(--verde-oliva)">
-            Para as avós
+            Para as avÃ³s
           </h3>
           <p>
             Tons suaves de dourado para um visual sofisticado, atemporal e
-            harmonioso com a celebração.
+            harmonioso com a celebraÃ§Ã£o.
           </p>
 
           <div class="palette-container">
@@ -1574,12 +1614,12 @@
           </div>
 
           <h3 style="color: var(--verde-oliva); margin-top: 30px;">
-            Para os avôs
+            Para os avÃ´s
           </h3>
           <p><strong>Traje:</strong> terno preto ou chumbo.</p>
           <p><strong>Camisa:</strong> branca.</p>
           <p><strong>Gravata azul:</strong> presente dos noivos para usar no dia.</p>
-          <p><strong>Sapato e cinto:</strong> preto ou café.</p>
+          <p><strong>Sapato e cinto:</strong> preto ou cafÃ©.</p>
         </div>
 
         <div style="display: grid; gap: 16px;">
@@ -1597,7 +1637,7 @@
                   height: 245px;
                   object-fit: cover;
                   display: block;
-                " alt="Inspiração para as avós">
+                " alt="InspiraÃ§Ã£o para as avÃ³s">
               <div style="
                   position: absolute;
                   bottom: 0;
@@ -1608,7 +1648,7 @@
                   color: white;
                 ">
                 <h4 style="margin: 0; font-size: 1rem; color: white">
-                  Referência para as avós
+                  ReferÃªncia para as avÃ³s
                 </h4>
               </div>
             </div>
@@ -1628,7 +1668,7 @@
                   height: 245px;
                   object-fit: cover;
                   display: block;
-                " alt="Inspiração para os avôs">
+                " alt="InspiraÃ§Ã£o para os avÃ´s">
               <div style="
                   position: absolute;
                   bottom: 0;
@@ -1639,7 +1679,7 @@
                   color: white;
                 ">
                 <h4 style="margin: 0; font-size: 1rem; color: white">
-                  Referência para os avôs
+                  ReferÃªncia para os avÃ´s
                 </h4>
               </div>
             </div>
@@ -1653,28 +1693,52 @@
       <div class="logo-container" style="width: 200px; height: 200px; margin: 0 auto 20px">
         <img src="https://i.imgur.com/TuA58sQ.png" loading="lazy" alt="Danielli &amp; Giovanni" style="width: 100%; height: 100%; object-fit: contain">
       </div>
-      <p>Por favor, confirmem sua presença até <strong>01/06/2026</strong></p>
+      <p>Por favor, confirmem sua presenÃ§a atÃ© <strong>01/06/2026</strong></p>
       <p><small>Com amor, Danielli &amp; Giovanni</small></p>
     </footer>
 
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
       (function () {
-        var videoId = "lrN940Xh4jQ";
+        var videoId = "xwXk0xrQd1U";
         var button = document.getElementById("musicToggle");
         var status = document.getElementById("musicStatus");
         var player = null;
         var playing = false;
+        var audioUnlocked = false;
 
         function setUi(isPlaying) {
           playing = isPlaying;
           button.setAttribute("aria-pressed", isPlaying ? "true" : "false");
-          button.textContent = isPlaying ? "Pausar música" : "Tocar música";
+          button.textContent = isPlaying ? "Pausar mÃºsica" : "Tocar mÃºsica";
+        }
+
+        function tryStartWithSound() {
+          if (!player) {
+            return;
+          }
+
+          player.setVolume(35);
+          player.unMute();
+          player.playVideo();
+        }
+
+        function unlockAudioOnce() {
+          if (audioUnlocked || !player) {
+            return;
+          }
+
+          audioUnlocked = true;
+          tryStartWithSound();
+          status.textContent = "Musica iniciada.";
+          window.removeEventListener("click", unlockAudioOnce);
+          window.removeEventListener("touchstart", unlockAudioOnce);
+          window.removeEventListener("keydown", unlockAudioOnce);
         }
 
         button.addEventListener("click", function () {
           if (!player) {
-            status.textContent = "Carregando música...";
+            status.textContent = "Carregando mÃºsica...";
             return;
           }
 
@@ -1682,12 +1746,15 @@
             player.pauseVideo();
             setUi(false);
           } else {
-            player.playVideo();
+            tryStartWithSound();
           }
         });
 
         setUi(false);
         status.textContent = "Tentando iniciar automaticamente...";
+        window.addEventListener("click", unlockAudioOnce, { passive: true });
+        window.addEventListener("touchstart", unlockAudioOnce, { passive: true });
+        window.addEventListener("keydown", unlockAudioOnce);
 
         var previousReady = window.onYouTubeIframeAPIReady;
         window.onYouTubeIframeAPIReady = function () {
@@ -1705,6 +1772,7 @@
               disablekb: 1,
               fs: 0,
               loop: 1,
+              mute: 1,
               modestbranding: 1,
               playlist: videoId,
               rel: 0,
@@ -1712,17 +1780,23 @@
             },
             events: {
               onReady: function (event) {
-                event.target.setVolume(35);
+                event.target.mute();
                 event.target.playVideo();
-                status.textContent = "Se o som não iniciar, clique em Tocar música";
+                setTimeout(function () {
+                  tryStartWithSound();
+                }, 500);
+                status.textContent = "Se o som nao iniciar, toque na tela.";
               },
               onStateChange: function (event) {
                 if (event.data === YT.PlayerState.PLAYING) {
                   setUi(true);
+                  if (player && player.isMuted()) {
+                    status.textContent = "Toque na tela para liberar o som.";
+                  }
                 } else if (event.data === YT.PlayerState.PAUSED) {
                   setUi(false);
                 } else if (event.data === YT.PlayerState.ENDED) {
-                  event.target.playVideo();
+                  tryStartWithSound();
                 }
               }
             }
@@ -1732,3 +1806,4 @@
     </script>
 
 </body></html>
+
